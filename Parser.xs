@@ -45,12 +45,10 @@ hook_parser_set_linestr (pTHX_ const char *new_value) {
 
 	new_len = strlen (new_value);
 
-	if (SvLEN (PL_linestr) < new_len) {
+	if (SvLEN (PL_linestr) < new_len+1) {
 		croak ("forced to realloc PL_linestr for line %s,"
 		       " bailing out before we crash harder", SvPVX (PL_linestr));
 	}
-
-	SvGROW (PL_linestr, new_len);
 
 	Copy (new_value, SvPVX (PL_linestr), new_len + 1, char);
 
@@ -210,7 +208,7 @@ CODE:
 		croak ("trying to alter PL_linestr at runtime");
 	}
 	new_chars = SvPV(new_value, new_len);
-	if (SvLEN (PL_linestr) < new_len) {
+	if (SvLEN (PL_linestr) < new_len+1) {
 		croak ("forced to realloc PL_linestr for line %s,"
 		       " bailing out before we crash harder", SvPVX (PL_linestr));
 	}

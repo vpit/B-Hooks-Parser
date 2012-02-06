@@ -1,3 +1,4 @@
+0.10  Mon, 06 Feb 2012 13:10:00 +0000
   * In the Perl API, don't be confused by NULs in the parser buffer.
   * Fix off-by-one error in buffer length check for set_linestr.
   * Jump through some hoops to avoid compiler warnings.

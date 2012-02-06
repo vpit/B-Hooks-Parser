@@ -6,6 +6,8 @@ Parser.*
 Makefile*
 !Makefile.PL
 META.yml
+MYMETA.json
+MYMETA.yml
 blib
 build
 inc

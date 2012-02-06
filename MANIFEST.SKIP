@@ -3,6 +3,7 @@ build\b
 blib\b
 Parser.c
 \.(?:bak|o|bs)$
+^MYMETA\.
 ^Makefile$
 ^Makefile.old$
 ^Debian

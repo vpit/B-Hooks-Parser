@@ -1,6 +1,7 @@
   * In the Perl API, don't be confused by NULs in the parser buffer.
   * Fix off-by-one error in buffer length check for set_linestr.
   * Jump through some hoops to avoid compiler warnings.
+  * Add MYMETA.{json,yml} to MANIFEST.SKIP and .gitignore.
 
 0.09  Wed, 03 Jun 2009 13:20:21 +0200
   * Don't redefine various macros if they already exist.

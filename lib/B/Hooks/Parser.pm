@@ -79,7 +79,8 @@ C<get_linestr_offset>).
 
 =head1 C API
 
-The following functions work just like their equivalent in the perl api.
+The following functions work just like their equivalent in the Perl API,
+except that they can't handle embedded NUL bytes in strings.
 
 =head2 hook_op_check_id hook_parser_setup (void)
 

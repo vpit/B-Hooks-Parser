@@ -184,10 +184,16 @@ void
 hook_parser_teardown (id)
 	UV id
 
-const char *
+SV *
 hook_parser_get_linestr ()
-	C_ARGS:
-		aTHX
+CODE:
+	if (NOT_PARSING) {
+		RETVAL = &PL_sv_undef;
+	} else {
+		RETVAL = newSVsv (PL_linestr);
+	}
+OUTPUT:
+	RETVAL
 
 IV
 hook_parser_get_linestr_offset ()
@@ -195,15 +201,32 @@ hook_parser_get_linestr_offset ()
 		aTHX
 
 void
-hook_parser_set_linestr (new_value)
-		const char *new_value
-	C_ARGS:
-		aTHX_ new_value
+hook_parser_set_linestr (SV *new_value)
+PREINIT:
+	char *new_chars;
+	int new_len;
+CODE:
+	if (NOT_PARSING) {
+		croak ("trying to alter PL_linestr at runtime");
+	}
+	new_chars = SvPV(new_value, new_len);
+	if (SvLEN (PL_linestr) < new_len) {
+		croak ("forced to realloc PL_linestr for line %s,"
+		       " bailing out before we crash harder", SvPVX (PL_linestr));
+	}
+	Copy (new_chars, SvPVX (PL_linestr), new_len + 1, char);
+	SvCUR_set (PL_linestr, new_len);
+	PL_bufend = SvPVX(PL_linestr) + new_len;
 
-const char *
+SV *
 hook_parser_get_lex_stuff ()
-	C_ARGS:
-		aTHX
+CODE:
+	if (NOT_PARSING || !PL_lex_stuff) {
+		RETVAL = &PL_sv_undef;
+	}
+	RETVAL = newSVsv (PL_lex_stuff);
+OUTPUT:
+	RETVAL
 
 void
 hook_parser_clear_lex_stuff ()

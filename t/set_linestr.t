@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::More tests => 1;
+use Test::More tests => 2;
 use B::Hooks::EndOfScope;
 use B::Hooks::Parser;
 
@@ -25,3 +25,10 @@ sub class (&) { }
     }
 
 pass;
+
+# This checks that we can inject NULs.
+no warnings "void";
+BEGIN { B::Hooks::Parser::inject("is 'a', q\0a\0;"); }
+'b';
+
+1;

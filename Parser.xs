@@ -37,7 +37,7 @@ hook_parser_get_linestr_offset (pTHX) {
 
 void
 hook_parser_set_linestr (pTHX_ const char *new_value) {
-	int new_len;
+	STRLEN new_len;
 
 	if (NOT_PARSING) {
         croak ("trying to alter PL_linestr at runtime");
@@ -103,6 +103,7 @@ grow_eval_sv (pTHX) {
 
 STATIC OP *
 check_eval (pTHX_ OP *op, void *user_data) {
+	PERL_UNUSED_VAR(user_data);
 	if (op->op_ppaddr == PL_ppaddr[OP_ENTEREVAL]) {
 		op->op_ppaddr = grow_eval_sv;
 	}
@@ -202,7 +203,7 @@ void
 hook_parser_set_linestr (SV *new_value)
 PREINIT:
 	char *new_chars;
-	int new_len;
+	STRLEN new_len;
 CODE:
 	if (NOT_PARSING) {
 		croak ("trying to alter PL_linestr at runtime");

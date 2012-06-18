@@ -77,6 +77,17 @@ Convenience function to insert a piece of perl code into the current line
 string (as returned by C<get_linestr>) at the current offset (as returned by
 C<get_linestr_offset>).
 
+=head2 get_lex_stuff()
+
+Returns the string of additional stuff resulting from recent lexing that
+is being held onto by the lexer.  For example, the content of a quoted
+string goes here.  Returns C<undef> if there is no such stuff.
+
+=head2 clear_lex_stuff()
+
+Discard the string of additional stuff resulting from recent lexing that
+is being held onto by the lexer.
+
 =head1 C API
 
 The following functions work just like their equivalent in the Perl API,
@@ -90,7 +101,11 @@ except that they can't handle embedded NUL bytes in strings.
 
 =head2 IV hook_parser_get_linestr_offset (pTHX)
 
-=head2 hook_parser_set_linestr (pTHX_ const char *new_value)
+=head2 void hook_parser_set_linestr (pTHX_ const char *new_value)
+
+=head2 char *hook_parser_get_lex_stuff (pTHX)
+
+=head2 void hook_parser_clear_lex_stuff (pTHX)
 
 =head1 AUTHOR
 

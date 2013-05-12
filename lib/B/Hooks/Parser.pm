@@ -33,7 +33,7 @@ __END__
 
 =head1 NAME
 
-B::Hooks::Parser - Interface to perls parser variables
+B::Hooks::Parser - Interface to perl's parser variables
 
 =head1 DESCRIPTION
 

@@ -14,7 +14,7 @@ sub eval_test($) {
 	my($src) = @_;
 	$x = undef;
 	is eval($src), 1;
-	is $x, $src;
+        like $x, qr/^\Q$src\E(?:\n;)?/;
 }
 eval_test(qq{ BEGIN { \$x = B::Hooks::Parser::get_linestr(); } 1 ;});
 eval_test(qq{ BEGIN { \$x = B::Hooks::Parser::get_linestr(); } q\x{0}1\x{0} ;});

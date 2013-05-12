@@ -27,7 +27,7 @@ makemaker_args(
     dist => { preop => 'pod2text lib/B/Hooks/Parser.pm > README' },
 );
 
-repository 'git://lake.fysh.org/zefram/B-Hooks-Parser.git';
+auto_set_repository;
 bugtracker 'http://rt.cpan.org/Public/Dist/Display.html?Name=B-Hooks-Parser';
 
 extra_tests;

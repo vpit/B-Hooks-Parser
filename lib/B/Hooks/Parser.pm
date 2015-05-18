@@ -1,7 +1,7 @@
 use strict;
 use warnings;
-
 package B::Hooks::Parser;
+# ABSTRACT: Interface to perl's parser variables
 
 use B::Hooks::OP::Check;
 use parent qw/DynaLoader/;
@@ -31,9 +31,7 @@ sub inject {
 
 __END__
 
-=head1 NAME
-
-B::Hooks::Parser - Interface to perl's parser variables
+=pod
 
 =head1 DESCRIPTION
 
@@ -106,17 +104,5 @@ except that they can't handle embedded NUL bytes in strings.
 =head2 char *hook_parser_get_lex_stuff (pTHX)
 
 =head2 void hook_parser_clear_lex_stuff (pTHX)
-
-=head1 AUTHOR
-
-Florian Ragwitz E<lt>rafl@debian.orgE<gt>
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright (c) 2008  Florian Ragwitz
-
-This module is free software.
-
-You may distribute this code under the same terms as Perl itself.
 
 =cut

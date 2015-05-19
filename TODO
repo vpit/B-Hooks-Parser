@@ -1,0 +1,21 @@
+
+symbol deprecated, time to update stoken_chunk_of_toke.c?
+  - UNKNOWN http://www.cpantesters.org/cpan/report/d354dd6d-7b13-1014-b2d7-331548f0d22a
+
+fixme:
+    test failures on BSD! (see RT)
+    can I learn something from https://rt.cpan.org/Ticket/Display.html?id=99810 ?
+
+
+need to be more verbose in tests:
+http://www.cpantesters.org/cpan/report/c28d3362-3955-11e4-984c-c33e65711713
+11:34 <@ether> BinGOs: is this also from the same clang problem?  http://www.cpantesters.org/cpan/report/c28d3362-3955-11e4-984c-c33e65711713
+11:34 <+dipsy> [ CPAN Testers Reports: Report for B-Hooks-Parser-0.12 ] 
+11:35 <@BinGOs> completely different OS
+11:38 <@BinGOs> 139 is usually SIGSEGV
+
+http://www.cpantesters.org/cpan/report/ed0b9646-3b27-11e4-984c-c33e65711713
+http://www.cpantesters.org/cpan/report/d7de4c06-3cc0-11e4-984c-c33e65711713
+http://www.cpantesters.org/cpan/report/af966b2e-3f91-11e4-984c-c33e65711713
+
+

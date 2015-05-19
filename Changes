@@ -1,51 +1,51 @@
-Change history for B-Hooks-Parser
+Revision history for B-Hooks-Parser
 
 {{ $NEXT }}
   - switch tooling off of Module::Install
 
-0.12  2013-05-11
-  * fix test that breaks in 5.17.4 (RT#80070, Father Chrysotomos)
-  * Require ExtUtils::Depends 0.302 for win32 support (RT#77311), Alexandr
+0.12    2013-05-11
+  - fix test that breaks in 5.17.4 (RT#80070, Father Chrysotomos)
+  - Require ExtUtils::Depends 0.302 for win32 support (RT#77311), Alexandr
     Ciornii)
 
-0.11  Mon, 18 Jun 2012 17:01:00 +0100
-  * Document get_lex_stuff and clear_lex_stuff.
-  * Document return type of C version of set_linestr.
+0.11    2012-06-18 16:01:00Z
+  - Document get_lex_stuff and clear_lex_stuff.
+  - Document return type of C version of set_linestr.
 
-0.10  Mon, 06 Feb 2012 13:10:00 +0000
-  * In the Perl API, don't be confused by NULs in the parser buffer.
-  * Fix off-by-one error in buffer length check for set_linestr.
-  * Jump through some hoops to avoid compiler warnings.
-  * Add MYMETA.{json,yml} to MANIFEST.SKIP and .gitignore.
-  * Note repository and bugtracker locations.
+0.10    2012-02-06 13:10:00Z
+  - In the Perl API, don't be confused by NULs in the parser buffer.
+  - Fix off-by-one error in buffer length check for set_linestr.
+  - Jump through some hoops to avoid compiler warnings.
+  - Add MYMETA.{json,yml} to MANIFEST.SKIP and .gitignore.
+  - Note repository and bugtracker locations.
 
-0.09  Wed, 03 Jun 2009 13:20:21 +0200
-  * Don't redefine various macros if they already exist.
-  * Add B::Hooks::Toke::skipspace function (Liu Kang-min).
+0.09    2009-06-03 11:20:21Z
+  - Don't redefine various macros if they already exist.
+  - Add B::Hooks::Toke::skipspace function (Liu Kang-min).
 
-0.08  Fri, 12 Dec 2008 16:36:57 +0100
-  * Add an inject function. This is a small convenience wrapper around
+0.08    2008-12-12 15:36:57Z
+  - Add an inject function. This is a small convenience wrapper around
     get_linestr, get_linestr_offset, substr and set_linestr to inject code at
     the parsers current position.
 
-0.07  Thu, 06 Nov 2008 01:12:47 +0100
-  * Make string eval line string growing work on < 5.10.0.
+0.07    2008-11-06 00:12:47Z
+  - Make string eval line string growing work on < 5.10.0.
 
-0.06  Wed, 05 Nov 2008 12:24:33 +0100
-  * Declare all public functions in the header file.
+0.06    2008-11-05 11:24:33Z
+  - Declare all public functions in the header file.
 
-0.05  Wed, 05 Nov 2008 11:35:55 +0100
-  * Grow the line string for string evals ins setup().
+0.05    2008-11-05 10:35:55Z
+  - Grow the line string for string evals ins setup().
 
-0.04  Tue, 04 Nov 2008 21:59:31 +0100
-  * Fix bug in clear_lex_stuff, making it actually work.
+0.04    2008-11-04 20:59:31Z
+  - Fix bug in clear_lex_stuff, making it actually work.
 
-0.03  Tue, 04 Nov 2008 02:49:33 +0100
-  * Bind various lexer functions. This is still experimental and not documented
+0.03    2008-11-04 01:49:33Z
+  - Bind various lexer functions. This is still experimental and not documented
     yet.
 
-0.02  Wed, 22 Oct 2008 21:18:14 +0200
-  * Don't segfault if PL_linestr needs relocation in set_linestr.
+0.02    2008-10-22 19:18:14Z
+  - Don't segfault if PL_linestr needs relocation in set_linestr.
 
-0.01  Tue, 21 Oct 2008 15:03:59 +0200
-  * Initial release.
+0.01    2008-10-21 13:03:59Z
+  - Initial release.

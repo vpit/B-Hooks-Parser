@@ -11,10 +11,10 @@ BEGIN { $x = "BEGIN { is(B::Hooks::Parser::get_linestr(), \$x); }\n" }
 BEGIN { is(B::Hooks::Parser::get_linestr(), $x); }
 
 sub eval_test($) {
-	my($src) = @_;
-	$x = undef;
-	is eval($src), 1;
-        like $x, qr/^\Q$src\E(?:\n;)?/;
+    my($src) = @_;
+    $x = undef;
+    is eval($src), 1;
+    like $x, qr/^\Q$src\E(?:\n;)?/;
 }
 eval_test(qq{ BEGIN { \$x = B::Hooks::Parser::get_linestr(); } 1 ;});
 eval_test(qq{ BEGIN { \$x = B::Hooks::Parser::get_linestr(); } q\x{0}1\x{0} ;});

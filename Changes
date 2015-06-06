@@ -1,5 +1,7 @@
 Revision history for B-Hooks-Parser
 
+{{ $NEXT }}
+
 0.13    2015-06-06 20:54:32Z
   - switch tooling off of Module::Install
 

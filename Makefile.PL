@@ -1,6 +1,9 @@
 use strict;
 use warnings;
+
+use lib 'inc';
 use ExtUtils::MakeMaker::Dist::Zilla::Develop;
+
 use ExtUtils::Depends;
 
 my $pkg = ExtUtils::Depends->new('B::Hooks::Parser', 'B::Hooks::OP::Check');

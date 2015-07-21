@@ -16,4 +16,8 @@ char *hook_toke_skipspace (pTHX_ char *s);
 char *hook_toke_scan_str (pTHX_ char *s);
 char *hook_toke_scan_word (pTHX_ int offset, int handle_package, char *dest, STRLEN destlen, STRLEN *res_len);
 
+#ifndef __PARSER_XS__
+#define hook_parser_setup() hook_parser_setup(aTHX)
+#endif
+
 #endif

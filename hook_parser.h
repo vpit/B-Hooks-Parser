@@ -4,7 +4,7 @@
 #include "perl.h"
 #include "hook_op_check.h"
 
-hook_op_check_id hook_parser_setup (void);
+hook_op_check_id hook_parser_setup (pTHX);
 void hook_parser_teardown (hook_op_check_id id);
 char *hook_parser_get_linestr (pTHX);
 IV hook_parser_get_linestr_offset (pTHX);

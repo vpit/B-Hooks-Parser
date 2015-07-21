@@ -1,3 +1,4 @@
+#define PERL_NO_GET_CONTEXT
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
@@ -112,7 +113,7 @@ check_eval (pTHX_ OP *op, void *user_data) {
 }
 
 hook_op_check_id
-hook_parser_setup () {
+hook_parser_setup (pTHX) {
 	filter_add (grow_linestr, NULL);
 	return hook_op_check (OP_ENTEREVAL, check_eval, NULL);
 }
@@ -178,6 +179,10 @@ PROTOTYPES: DISABLE
 
 UV
 hook_parser_setup ()
+CODE:
+	RETVAL = hook_parser_setup (aTHX);
+OUTPUT:
+	RETVAL
 
 void
 hook_parser_teardown (id)

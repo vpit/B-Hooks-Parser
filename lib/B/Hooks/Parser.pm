@@ -91,7 +91,7 @@ is being held onto by the lexer.
 The following functions work just like their equivalent in the Perl API,
 except that they can't handle embedded C<NUL> bytes in strings.
 
-=head2 C<hook_op_check_id hook_parser_setup (void)>
+=head2 C<hook_op_check_id hook_parser_setup (pTHX)>
 
 =head2 C<void hook_parser_teardown (hook_op_check_id id)>
 
